@@ -9,11 +9,11 @@ One thing that we found from the data is that there is very little variability b
 
 ## Troubleshooting:
 When new columns were statistically calculated, our data was not being organized in descending order. The reason this was happening was because the data that was being read in as a string rather than a float.
-This hapenned using the following formating code:
+This happened using the following formatting code:
 ```python
 .map("{:,.2f}".format)
 ```
-And managed to fix it with reformating:
+And managed to fix it with reformatting:
 ```python
 .astype(float)
 ```
