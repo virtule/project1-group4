@@ -8,7 +8,16 @@ We decided that we wanted to make a presentation about which teams were the best
 One thing that we found from the data is that there is very little variability between teams. Basically the top teams are within a percentage of each other. Another thing that we found was that the top teams were disproportionately closer to the present than the past. This was especially true for offensive statistics. The reason why this was the case is because there have been a ton of rule changes since the 80s and 90s. Many of the popular defensive tactics that you saw performed by players like Bill Laimbeer would get you ejected from a NBA game in the 21st century. These rule changes have favored offenses much more than defenses making it easier to score.
 
 ## Troubleshooting:
-When new columns were statistically calculated, our data was not being organized in descending order. The reason this was happening was because the data that was being read in as a string rather than a float. After the data was converted to a float we were finally able to get the data looking proper. After that, getting our data into something visually appealing and readable was the last thing we achieved.
+When new columns were statistically calculated, our data was not being organized in descending order. The reason this was happening was because the data that was being read in as a string rather than a float.
+This hapenned using the following formating code:
+```python
+.map("{:,.2f}".format)
+```
+And managed to fix it with reformating:
+```python
+.astype(float)
+```
+After the data was converted to a float we were finally able to get the data looking proper. After that, getting our data into something visually appealing and readable was the last thing we achieved.
 
 ## Limitations: 
 ### Comparison Across Seasons: 
